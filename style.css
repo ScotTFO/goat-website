@@ -666,6 +666,52 @@ footer {
   border-top: 1px solid var(--border);
 }
 
+/* ---- SHARE BUTTONS ---- */
+.share-bar, .article-share {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+}
+
+.article-share {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.share-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.share-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.share-x { font-family: var(--font-sans); }
+.share-linkedin { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700; }
+
 .footer-quote {
   font-style: italic;
   color: var(--text);
