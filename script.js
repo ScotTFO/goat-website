@@ -103,4 +103,14 @@
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
   });
+
+  // Fallback: if elements haven't appeared after 2s, force them visible
+  setTimeout(() => {
+    document.querySelectorAll('.about-card, .thought-card, .community-card, .journal-entry, .value').forEach((el) => {
+      if (el.style.opacity === '0') {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }
+    });
+  }, 2000);
 })();

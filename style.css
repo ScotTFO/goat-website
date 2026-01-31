@@ -315,7 +315,7 @@ nav {
 .section {
   position: relative;
   z-index: 1;
-  padding: 5rem 2rem;
+  padding: 4rem 2rem;
 }
 
 .section-dark { background: var(--bg-dark); }
