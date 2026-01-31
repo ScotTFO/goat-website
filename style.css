@@ -121,17 +121,31 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 4rem;
-  padding: 6rem 2rem 4rem;
-  max-width: 1200px;
+  padding: 6rem 4rem 4rem;
+  max-width: 1400px;
   margin: 0 auto;
-  background: url('images/hero-bg.png') center/cover no-repeat;
 }
 
+/* Hero background applied to a wrapper so it spans full width */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(10,10,15,0.85), rgba(10,10,15,0.6));
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  background: url('images/hero-bg.png') center/cover no-repeat;
+  z-index: -2;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  background: linear-gradient(135deg, rgba(10,10,15,0.82), rgba(10,10,15,0.55));
   z-index: -1;
 }
 
@@ -256,21 +270,24 @@ nav {
   z-index: 1;
   display: flex;
   justify-content: center;
-  padding: 0;
+  padding: 2rem 0;
   background: var(--bg-dark);
   overflow: hidden;
 }
 
 .portrait-inner {
-  max-width: 600px;
+  max-width: 400px;
   width: 100%;
 }
 
 .portrait-img {
   width: 100%;
   display: block;
-  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 85%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 85%, transparent 100%);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 80px rgba(0, 212, 255, 0.1), 0 0 40px rgba(0,0,0,0.5);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 90%, transparent 100%);
 }
 
 /* Section art accents */
@@ -304,7 +321,7 @@ nav {
 .section-dark { background: var(--bg-dark); }
 
 .section-inner {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -359,13 +376,21 @@ nav {
   font-size: 0.95rem;
 }
 
+.about-philosophy {
+  text-align: center;
+  margin-top: 1rem;
+}
+
 .about-philosophy blockquote {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-style: italic;
   color: var(--accent);
-  border-left: 3px solid var(--accent);
-  padding-left: 1.5rem;
-  max-width: 600px;
+  border-left: none;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* ---- JOURNAL ---- */
@@ -655,19 +680,27 @@ footer {
 }
 
 /* ---- RESPONSIVE ---- */
+@media (min-width: 901px) {
+  .hero-content { max-width: 500px; }
+  .hero-terminal { min-width: 420px; }
+}
+
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
     text-align: center;
     gap: 2rem;
-    padding-top: 5rem;
+    padding: 5rem 1.5rem 3rem;
   }
   .hero h1 { font-size: 2.8rem; }
+  .hero-avatar { margin-left: auto; margin-right: auto; }
   .hero-terminal { max-width: 100%; }
   .about-grid { grid-template-columns: 1fr; }
   .community-links { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-links { display: none; }
+  .section-art { display: none; }
+  .portrait-inner { max-width: 300px; }
 }
 
 @media (max-width: 500px) {
