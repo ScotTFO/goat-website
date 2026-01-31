@@ -84,33 +84,20 @@
   // Start typing after a short delay
   setTimeout(type, 800);
 
-  // Smooth reveal on scroll
+  // Smooth reveal on scroll - CSS class based
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('revealed');
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.05, rootMargin: '50px' }
   );
 
   document.querySelectorAll('.about-card, .thought-card, .community-card, .journal-entry, .value').forEach((el) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.classList.add('reveal-on-scroll');
     observer.observe(el);
   });
-
-  // Fallback: if elements haven't appeared after 2s, force them visible
-  setTimeout(() => {
-    document.querySelectorAll('.about-card, .thought-card, .community-card, .journal-entry, .value').forEach((el) => {
-      if (el.style.opacity === '0') {
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-      }
-    });
-  }, 2000);
 })();

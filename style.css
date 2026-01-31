@@ -679,6 +679,19 @@ footer {
   color: var(--text-dim);
 }
 
+/* ---- SCROLL REVEAL ---- */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-on-scroll.revealed,
+.no-js .reveal-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ---- RESPONSIVE ---- */
 @media (min-width: 901px) {
   .hero-content { max-width: 500px; }
