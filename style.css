@@ -784,6 +784,80 @@ footer {
   color: var(--text-dim);
 }
 
+/* ---- PAGE HEADERS ---- */
+.page-header {
+  padding-top: 6rem;
+  padding-bottom: 1rem;
+}
+
+.page-title {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-bright);
+}
+
+.page-date {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: 0.3rem;
+}
+
+/* ---- JOURNAL PREVIEW ---- */
+.journal-preview {
+  display: flex;
+  gap: 2rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.3s, transform 0.2s;
+  margin-bottom: 1rem;
+}
+
+.journal-preview:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-2px);
+}
+
+.preview-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.preview-content h3 {
+  color: var(--text-bright);
+  margin-bottom: 0.5rem;
+}
+
+.preview-content p {
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.preview-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  background: var(--accent-glow);
+  color: var(--accent);
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.accent-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.accent-link:hover { text-decoration: underline; }
+
 /* ---- SCROLL REVEAL ---- */
 .reveal-on-scroll {
   opacity: 0;
