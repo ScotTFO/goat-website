@@ -124,9 +124,34 @@ nav {
   padding: 6rem 2rem 4rem;
   max-width: 1200px;
   margin: 0 auto;
+  background: url('images/hero-bg.png') center/cover no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10,10,15,0.85), rgba(10,10,15,0.6));
+  z-index: -1;
 }
 
 .hero-content { flex: 1; }
+
+.hero-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 30px var(--accent-glow), 0 0 60px rgba(0,212,255,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.hero-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .hero-badge {
   display: inline-block;
@@ -223,6 +248,50 @@ nav {
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
+}
+
+/* ---- PORTRAIT ---- */
+.portrait-section {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  background: var(--bg-dark);
+  overflow: hidden;
+}
+
+.portrait-inner {
+  max-width: 600px;
+  width: 100%;
+}
+
+.portrait-img {
+  width: 100%;
+  display: block;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 85%, transparent 100%);
+}
+
+/* Section art accents */
+.section-art {
+  position: absolute;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-art-right { right: 0; }
+.section-art-left { left: 0; }
+
+.section-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ---- SECTIONS ---- */
