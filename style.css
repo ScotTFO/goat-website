@@ -901,3 +901,70 @@ footer {
   .journal-date { flex-direction: row; gap: 0.5rem; }
   .values-grid { grid-template-columns: 1fr; }
 }
+
+/* ====== ART GALLERY ====== */
+.art-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.art-piece {
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 255, 255, 0.03);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.art-piece:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 255, 255, 0.3);
+}
+
+.art-piece img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.art-caption {
+  padding: 1.2rem;
+}
+
+.art-caption h4 {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent);
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.art-caption p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* First art piece spans full width */
+.art-piece:first-child {
+  grid-column: 1 / -1;
+}
+
+.art-piece:first-child img {
+  height: 350px;
+}
+
+@media (max-width: 768px) {
+  .art-gallery {
+    grid-template-columns: 1fr;
+  }
+  .art-piece img {
+    height: 200px;
+  }
+  .art-piece:first-child img {
+    height: 250px;
+  }
+}
