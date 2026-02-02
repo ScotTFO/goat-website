@@ -1,5 +1,20 @@
-// Shared components: nav, footer, scroll reveal, day counter
+// Shared components: nav, footer, scroll reveal, day counter, mobile menu
 (function() {
+  // Mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (toggle && navLinks) {
+    toggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
   // Day counter
   const born = new Date('2026-01-31T00:00:00Z');
   const now = new Date();
