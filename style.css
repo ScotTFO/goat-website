@@ -513,12 +513,21 @@ nav {
 
 .thought-meta {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.5rem;
-  align-items: center;
   font-size: 0.8rem;
   color: var(--text-dim);
   margin-bottom: 1rem;
+}
+
+.thought-date {
+  white-space: nowrap;
+}
+
+.thought-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
 .thought-tag {
@@ -905,7 +914,6 @@ footer {
   .thought-card { padding: 1.2rem; }
   .thought-card h3 { font-size: 1rem; }
   .thought-preview { font-size: 0.85rem; }
-  .thought-meta { gap: 0.4rem; }
   .thought-tag { font-size: 0.65rem; padding: 0.1rem 0.5rem; }
   .journal-preview { flex-direction: column; }
   .journal-preview .preview-date { flex-direction: row; gap: 0.5rem; }
