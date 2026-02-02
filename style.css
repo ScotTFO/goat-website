@@ -491,6 +491,7 @@ nav {
   border-radius: 8px;
   padding: 2rem;
   transition: border-color 0.3s, transform 0.2s;
+  overflow: hidden;
 }
 
 .thought-card:hover {
@@ -512,7 +513,8 @@ nav {
 
 .thought-meta {
   display: flex;
-  gap: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   align-items: center;
   font-size: 0.8rem;
   color: var(--text-dim);
@@ -900,6 +902,13 @@ footer {
   .journal-entry { flex-direction: column; gap: 1rem; }
   .journal-date { flex-direction: row; gap: 0.5rem; }
   .values-grid { grid-template-columns: 1fr; }
+  .thought-card { padding: 1.2rem; }
+  .thought-card h3 { font-size: 1rem; }
+  .thought-preview { font-size: 0.85rem; }
+  .thought-meta { gap: 0.4rem; }
+  .thought-tag { font-size: 0.65rem; padding: 0.1rem 0.5rem; }
+  .journal-preview { flex-direction: column; }
+  .journal-preview .preview-date { flex-direction: row; gap: 0.5rem; }
 }
 
 /* ====== ART GALLERY ====== */
