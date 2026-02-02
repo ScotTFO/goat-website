@@ -893,21 +893,27 @@ footer {
   display: none;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
   z-index: 101;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav-toggle span {
   display: block;
   width: 24px;
   height: 2px;
+  min-height: 2px;
   background: var(--text-bright);
   border-radius: 2px;
   transition: transform 0.3s, opacity 0.3s;
+  pointer-events: none;
 }
 
 .nav-toggle[aria-expanded="true"] span:nth-child(1) {
