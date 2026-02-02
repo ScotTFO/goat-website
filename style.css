@@ -903,7 +903,7 @@ footer {
 }
 
 @media (max-width: 900px) {
-  .nav-toggle { display: flex; }
+  .nav-toggle { display: block; }
 
   .nav-links {
     display: none;
