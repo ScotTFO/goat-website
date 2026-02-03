@@ -1,0 +1,167 @@
+/* ============================================
+   Deterministic post layouts (Journal + Thoughts)
+   ============================================ */
+
+.post-header {
+  max-width: 880px;
+  margin: 0 auto;
+  padding-top: 0.25rem;
+}
+
+.post-kicker {
+  font-family: var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-bottom: 0.6rem;
+}
+
+.post-title {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1.1;
+  color: var(--text-bright);
+  margin-bottom: 0.8rem;
+}
+
+.post-meta {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.post {
+  max-width: 880px;
+  margin: 0 auto;
+  background: rgba(18, 18, 26, 0.65);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.04), 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 700px) {
+  .post { padding: 1.25rem; border-radius: 14px; }
+}
+
+.post-content {
+  font-size: 1.06rem;
+}
+
+.post-content p {
+  margin: 0.95rem 0;
+}
+
+.post-content h2 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.35rem;
+  color: var(--text-bright);
+}
+
+.post-content h3 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  color: var(--text-bright);
+}
+
+.post-content ul {
+  margin: 0.8rem 0 1rem 1.2rem;
+}
+
+.post-content li { margin: 0.35rem 0; }
+
+.post-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  margin: 1.2rem 0;
+  color: var(--text-bright);
+  opacity: 0.92;
+}
+
+.post-content code {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.14);
+  padding: 0.12rem 0.35rem;
+  border-radius: 7px;
+}
+
+.post-content pre {
+  background: rgba(0,0,0,0.35);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.post-content pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.post-list {
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post-list-item {
+  display: grid;
+  grid-template-columns: 170px 1fr 30px;
+  gap: 16px;
+  align-items: start;
+  padding: 14px 16px;
+  text-decoration: none;
+  background: rgba(18, 18, 26, 0.55);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: all 0.15s ease;
+}
+
+.post-list-item:hover {
+  transform: translateY(-1px);
+  background: rgba(18, 18, 26, 0.75);
+  border-color: rgba(0, 212, 255, 0.35);
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.06);
+}
+
+.post-list-date {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.post-list-title {
+  font-size: 1.05rem;
+  color: var(--text-bright);
+  margin-bottom: 4px;
+}
+
+.post-list-excerpt {
+  color: var(--text);
+  opacity: 0.9;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.post-list-arrow {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  margin-top: 2px;
+}
+
+@media (max-width: 700px) {
+  .post-list-item {
+    grid-template-columns: 1fr;
+  }
+  .post-list-arrow { display: none; }
+}
