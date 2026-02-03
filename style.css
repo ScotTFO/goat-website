@@ -919,7 +919,8 @@ footer {
     gap: 0.8rem;
   }
 
-  nav .nav-links.open {
+  nav .nav-links.open,
+  nav .nav-links.nav-links.open {
     display: flex !important;
   }
 
